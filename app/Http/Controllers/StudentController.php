@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller {
@@ -83,5 +84,16 @@ class StudentController extends Controller {
 //        $result = DB::table('student')->min('age');
         var_dump($result);
 
+    }
+    // ORM
+    public function orm () {
+//        $student = Student::all();
+//        $student = Student::get();
+//        $student = Student::find(9);
+//        Student::chunk(2, function ($student) {
+//            dd($student);
+//        });
+        $student = Student::orderBy("id", "desc")->first();
+        dd($student);
     }
 }
