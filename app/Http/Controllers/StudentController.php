@@ -96,4 +96,18 @@ class StudentController extends Controller {
         $student = Student::orderBy("id", "desc")->first();
         dd($student);
     }
+    public function timeDate () {
+//        $student = new Student();
+//        $student->name = 'Mir';
+//        $student->age  = 99;
+//        $result = $student->save();
+//        print_r($result);
+//        $result = Student::orderBy('id', 'desc')->pluck('created_at')->first();
+//        echo Date('Y-m-d H:i:s', $result);
+        // create data
+        $student = Student::create([
+            'name' => 'miraclesg', 'age' => 23
+        ]);
+        dd($student);
+    }
 }
