@@ -27,7 +27,7 @@ Route::any('Student/iterable', ['uses' => 'StudentController@iterable']);
 Route::any('Student/iterUpdate', ['uses' => 'StudentController@iterUpdate']);
 Route::any('Student/iterDel', ['uses' => 'StudentController@iterDel']);
 Route::any('Student/iterInsert', ['uses' => 'StudentController@iterInsert']);
-
+Route::any("Student/aggrgation", ['uses' => 'StudentController@aggrgation']);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -40,5 +40,5 @@ Route::any('Student/iterInsert', ['uses' => 'StudentController@iterInsert']);
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
 });

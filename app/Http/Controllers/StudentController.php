@@ -74,4 +74,14 @@ class StudentController extends Controller {
         $result = DB::table('student')->whereRaw('id > ? and age > ?', [10, 20])->get();
         var_dump($result);
     }
+    // 聚合函数
+    public function aggrgation () {
+//        $result = DB::table('student')->count('age');
+//        $result = DB::table('student')->sum('id');
+//        $result = DB::table('student')->avg('age');
+//        $result = DB::table('student')->max('age');
+//        $result = DB::table('student')->min('age');
+        var_dump($result);
+
+    }
 }
