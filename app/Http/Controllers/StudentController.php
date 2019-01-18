@@ -12,15 +12,15 @@ class StudentController extends Controller {
 //            'MiraclesGG'
 //        ]);
         // 查询
-//        $result = DB::select("select * from student where id < ?", [
-//            5
-//        ]);
-//        dd($result);
-        // 删除
-        $result = DB::delete("delete from student where id = ?", [
-            10
+        $result = DB::select("select * from student where id < ?", [
+            5
         ]);
-        var_dump($result);
+        dd($result);
+        // 删除
+//        $result = DB::delete("delete from student where id = ?", [
+//            11
+//        ]);
+//        var_dump($result);
     }
 
     public function iterable () {
@@ -56,6 +56,22 @@ class StudentController extends Controller {
     }
     public function iterDel () {
         $result = DB::table('student')->where('id', '>=', '15')->delete();
+        var_dump($result);
+    }
+    public function iterInsert () {
+        // get
+//        $result = DB::table('student')->get();
+        // first | orderBy
+//        $result = DB::table('student')->orderBy('id', 'desc')->first();
+        // pluck
+//        $result = DB::table('student')->pluck("name");
+        // lists
+//        $result = DB::table('student')->lists('name', 'id');
+        // chunk
+//        DB::table('student')->chunk(2, function ($student) {
+//            var_dump($student);
+//        });
+        $result = DB::table('student')->whereRaw('id > ? and age > ?', [10, 20])->get();
         var_dump($result);
     }
 }

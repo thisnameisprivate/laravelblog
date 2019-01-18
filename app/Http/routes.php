@@ -26,6 +26,7 @@ Route::any('Student/InsertDb', ['uses' => 'StudentController@InsertDb']);
 Route::any('Student/iterable', ['uses' => 'StudentController@iterable']);
 Route::any('Student/iterUpdate', ['uses' => 'StudentController@iterUpdate']);
 Route::any('Student/iterDel', ['uses' => 'StudentController@iterDel']);
+Route::any('Student/iterInsert', ['uses' => 'StudentController@iterInsert']);
 
 /*
 |--------------------------------------------------------------------------
