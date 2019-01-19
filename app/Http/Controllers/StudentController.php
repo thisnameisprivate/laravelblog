@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Student;
 use Illuminate\Support\Facades\DB;
 
@@ -110,4 +111,15 @@ class StudentController extends Controller {
         ]);
         dd($student);
     }
+    // Request
+    public function request (Request $request) {
+       if ($request->has('name')) {
+           echo $request->input('name');
+       } else {
+           echo "Not find this name param";
+       }
+       $response = $request->all();
+       dd($response);
+    }
+
 }

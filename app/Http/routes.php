@@ -30,6 +30,7 @@ Route::any('Student/iterInsert', ['uses' => 'StudentController@iterInsert']);
 Route::any("Student/aggrgation", ['uses' => 'StudentController@aggrgation']);
 Route::any("Student/orm", ['uses' => 'StudentController@orm']);
 Route::any("Student/timeDate", ['uses' => 'StudentController@timeDate']);
+Route::any("Student/request", ['uses' => 'StudentController@request']);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
