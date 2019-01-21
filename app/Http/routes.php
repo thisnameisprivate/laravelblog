@@ -31,6 +31,12 @@ Route::any("Student/aggrgation", ['uses' => 'StudentController@aggrgation']);
 Route::any("Student/orm", ['uses' => 'StudentController@orm']);
 Route::any("Student/timeDate", ['uses' => 'StudentController@timeDate']);
 Route::any("Student/request", ['uses' => 'StudentController@request']);
+
+// web 中间件
+Route::group(['middleware' => ['web']], function () {
+    Route::any('Student/setSession', ['uses' => 'StudentController@setSession']);
+    Route::any('Student/getSession', ['uses' => 'StudentController@getSession']);
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes

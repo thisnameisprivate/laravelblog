@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Student;
 use Illuminate\Support\Facades\DB;
@@ -60,6 +61,7 @@ class StudentController extends Controller {
         $result = DB::table('student')->where('id', '>=', '15')->delete();
         var_dump($result);
     }
+    // 
     public function iterInsert () {
         // get
 //        $result = DB::table('student')->get();
@@ -120,6 +122,17 @@ class StudentController extends Controller {
        }
        $response = $request->all();
        dd($response);
+       var_dump($request->method());
+       var_dump($request->is('Student/*'));
+       var_dump($request->ajax());
+       var_dump($request->isMethod('POST'));
     }
-
+    // Session http Request
+    public function setSession (Request $request) {
+//        $request->session()->put('username', 'Miraclesgg');
+    }
+    // get Session
+    public function getSession (Request $request) {
+//        $request->session()->get('username');
+    }
 }
