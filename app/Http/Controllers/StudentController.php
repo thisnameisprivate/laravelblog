@@ -135,4 +135,11 @@ class StudentController extends Controller {
     public function getSession (Request $request) {
 //        $request->session()->get('username');
     }
+
+    public function response () {
+        redirect('getSession');
+        redirect('getSession')->with('message', 'codeing');
+        redirect()->back();
+        redirect()->action('StudentController@getSession')->with('message', 'codeing');
+    }
 }
