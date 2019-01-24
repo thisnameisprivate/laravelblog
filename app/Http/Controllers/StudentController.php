@@ -133,7 +133,7 @@ class StudentController extends Controller {
     }
     // get Session
     public function getSession (Request $request) {
-//        $request->session()->get('username');
+        $request->session()->put('username');
     }
 
     public function response () {
