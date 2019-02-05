@@ -9,6 +9,6 @@ class Activity {
         if (time() < strtotime('2019-1-24')) {
             return "not find public page";
         }
-        $next($request);
+        return $next($request);
     }
 }
