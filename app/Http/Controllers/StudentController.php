@@ -129,7 +129,7 @@ class StudentController extends Controller {
     }
     // Session http Request
     public function setSession (Request $request) {
-//        $request->session()->put('username', 'Miraclesgg');
+        $request->session()->put('username', 'Miraclesgg');
     }
     // get Session
     public function getSession (Request $request) {
@@ -141,5 +141,17 @@ class StudentController extends Controller {
         redirect('getSession')->with('message', 'codeing');
         redirect()->back();
         redirect()->action('StudentController@getSession')->with('message', 'codeing');
+    }
+
+    public function activity0 () {
+        return "活动快要开始啦";
+    }
+
+    public function activity1 () {
+        return "活动正在进行中";
+    }
+
+    public function activity2 () {
+        return "互动结束";
     }
 }
